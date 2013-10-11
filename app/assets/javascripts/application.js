@@ -14,6 +14,18 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require ckeditor/init
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+
+$(document).ready(function(){
+	var first_logo = $('.start_logo1'),
+		second_logo = $('.start_logo2');
+	window.setTimeout(function(){
+		first_logo.addClass('header_logo1');
+		second_logo.addClass('header_logo2');
+	},500);
+});
+

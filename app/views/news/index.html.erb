@@ -1,0 +1,11 @@
+<div>
+  <% @news.each do |news| %>
+    <div>
+      <%= news.content.html_safe %>
+    </div>
+<%= link_to 'New News', new_news_path %>
+<%= link_to 'Show', news %>
+<% end %>
+</div>
+
+
