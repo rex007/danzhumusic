@@ -8,6 +8,7 @@ Bundler.require(:default, Rails.env)
 
 module Danzhumusic
   class Application < Rails::Application
+    Paperclip::Railtie.insert
 
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
     # Settings in config/environments/* take precedence over those specified here.
