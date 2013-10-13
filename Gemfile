@@ -10,7 +10,7 @@ gem 'pg'
 # Use different gems here
 gem 'zurb-foundation'
 gem 'ckeditor'
-gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
+gem "paperclip"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
