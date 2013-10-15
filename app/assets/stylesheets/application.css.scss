@@ -22,9 +22,16 @@
 	z-index: 2;
 	top: 8%;
 	left: -30%;
-	transform: rotate(-1080deg);
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
 	transition: all 1s ease;
-
+	transform: rotate(-360deg);
+	-webkit-transform: rotate(-360deg);
+	-moz-transform: rotate(-360deg);
+	-o-transform: rotate(-360deg);
+	-ms-transform: rotate(-360deg);
 
 }
 .start_logo2{
@@ -32,6 +39,10 @@
 	z-index: 2;
 	top: 90%;
 	left: 100%;
+	-webkit-transition: all 0.5s linear;
+	-moz-transition: all 0.5s linear;
+	-o-transition: all 0.5s linear;
+	-ms-transition: all 0.5s linear;
 	transition: all 0.5s linear;
 }
 
@@ -42,7 +53,11 @@
 	top: 8%;
 	left: 75%;
 	z-index: 2;
-	transform: rotate(1080deg);
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	transform: rotate(360deg);
 }
 .header_logo2{
 	position: absolute;
@@ -52,18 +67,42 @@
 }
 
 
-header{
-	position: relative;
+// header style
+
+.header{
 	width: 100%;
 	height: 350px;
 	background: black;
-	.header_violin{
-		position: absolute;
-		top: 86%;
-		left: 10%;
-	}
-
+	position: relative;
 }
+.header_violin{
+	left: 10%;
+	top: 150%;
+	width: 100%;
+}
+
+.header_bg1, .header_bg2, .header_bg3, .header_bg4{
+	position:absolute;
+	z-index: 2;
+	left: 10%;
+	top:1%;
+	display: none;
+}
+.relative{
+	position:relative;
+	width: 100%;
+}
+
+// footer style
+
+footer{
+	width: 100%;
+	height: 100px;
+	background: black;
+}
+
+// middle space header and footer
+
 .top_space{
 	width: 100%;
 	height: 150px;
@@ -71,10 +110,4 @@ header{
 .down_space{
 	width: 100%;
 	height: 50px;
-}
-
-footer{
-	width: 100%;
-	height: 100px;
-	background: black;
 }

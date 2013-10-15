@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131012081017) do
+ActiveRecord::Schema.define(version: 20131015075933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bios", force: true do |t|
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false

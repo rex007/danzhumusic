@@ -20,6 +20,8 @@
 $(function(){ $(document).foundation(); });
 
 
+// intro header animation
+
 $(document).ready(function(){
 	var first_logo = $('.start_logo1'),
 		second_logo = $('.start_logo2');
@@ -29,3 +31,34 @@ $(document).ready(function(){
 	},500);
 });
 
+// function bgChange(){
+
+// 	$('.header_bg1').each(function(index){
+// 		$(this).hide();
+// 		$(this).delay(9000 * index).fadeIn(12000).fadeOut(10000);
+// 	});
+// 	setTimeout(bgChange, 55000);
+// }
+
+// bgChange();
+
+$(function(){
+	var current = 0
+
+	$imgs = $('.header_bg1');
+	imgAmount = $imgs.length;
+
+	$($imgs.hide().get(Math.floor(Math.random() * $('.header_bg1:hidden').length))).show();
+
+	window.setInterval(swapImages, 6500);
+
+	function swapImages() {
+		var $currentImg = $('.header_bg1:visible');
+		var $nextImg = $('.header_bg1:hidden').eq(Math.floor(Math.random() * $('.header_bg1:hidden').length)); 
+			speed = 7000;
+
+		$currentImg.fadeOut(speed);
+		$nextImg.fadeIn(speed);
+	}
+
+});

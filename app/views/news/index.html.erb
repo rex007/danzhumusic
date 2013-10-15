@@ -1,6 +1,6 @@
 <div>
   <% @news.each do |news| %>
-    <div>
+    <div class= "large-12">
       <%= news.content.html_safe %>
     </div>
 <%= link_to 'New News', new_news_path %>

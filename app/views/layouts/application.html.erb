@@ -21,12 +21,20 @@
   </head>
 
   <body class="<%= controller.controller_name %>">
-
-    <header>
+    <div class="header">
+      <%= image_tag 'header_bg1.png', class: 'header_bg1' %>
+      <%= image_tag 'header_bg2.png', class: 'header_bg1' %>
+      <%= image_tag 'header_bg3.png', class: 'header_bg1' %>
+      <%= image_tag 'header_bg4.png', class: 'header_bg1' %>      
+      <div class= "header large-12 small-6 relative">
+        <%= image_tag 'header_logo1.png', class: 'start_logo1' %>
+        <%= image_tag 'header_logo2.png', class: 'start_logo2' %>
+      </div>
+    </div>
+    <div class="large-12 relative">
       <%= image_tag "header_violin.png", class: "header_violin" %>
-      <%= image_tag 'header_logo1.png', class: 'start_logo1' %>
-      <%= image_tag 'header_logo2.png', class: 'start_logo2' %>
-    </header>
+    </div>
+
     <div class="top_space"></div>
 
     <%= yield %>
@@ -37,5 +45,6 @@
       
     </footer>
     <%= javascript_include_tag "application" %>
+
   </body>
 </html>
