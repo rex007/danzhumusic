@@ -1,9 +1,5 @@
-<%= form_for @bio do |f| %>
-<div class="field">
-	<%= f.label :content %>
-	<%= f.text_area :content, class: 'ckeditor' %>
-</div>
-<div class="actions">
-	<%= f.submit %>
-</div>
+<% @bios.each do |bio| %>
+	<div class="large-12">
+		<%= bio.content.html_safe %>
+	</div>
 <% end %>

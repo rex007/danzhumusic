@@ -1,10 +1,18 @@
 Danzhumusic::Application.routes.draw do
-  resources :bios
   resources :news
+  resources :performances
+
+  resources :bios  
+  resources :contact, only: [:new,:create]
+
+
+
+  get 'contact', to: 'contact#new', via: :get
+  get 'contact', to: 'contact#create', via: :post
+
 
   mount Ckeditor::Engine => '/ckeditor'
-  get "bios/index"
-  get "welcome/index"
+  get "contact/new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

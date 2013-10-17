@@ -21,30 +21,72 @@
   </head>
 
   <body class="<%= controller.controller_name %>">
-    <div class="header">
-      <%= image_tag 'header_bg1.png', class: 'header_bg1' %>
-      <%= image_tag 'header_bg2.png', class: 'header_bg1' %>
-      <%= image_tag 'header_bg3.png', class: 'header_bg1' %>
-      <%= image_tag 'header_bg4.png', class: 'header_bg1' %>      
-      <div class= "header large-12 small-6 relative">
-        <%= image_tag 'header_logo1.png', class: 'start_logo1' %>
-        <%= image_tag 'header_logo2.png', class: 'start_logo2' %>
+
+    <!-- header content -->
+
+    <header>
+      <div class="row">
+        <div class="large-8 small-8 columns">
+          <div class="relative">
+            <%= image_tag 'header_bg1.png', class: 'header_bg1' %>
+            <%= image_tag 'header_bg2.png', class: 'header_bg1' %>
+            <%= image_tag 'header_bg3.png', class: 'header_bg1' %>
+            <%= image_tag 'header_bg4.png', class: 'header_bg1' %>   
+            <%= image_tag 'header_bg5.png', class: 'header_bg1' %>
+          </div>      
+        </div>
+        <div class="large-4 small-4 columns">
+          <div class="relative">
+            <%= image_tag 'header_logo.png', class: 'start_logo' %>
+            <%= image_tag 'header_name.png', class: 'start_name' %>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="large-12 relative">
-      <%= image_tag "header_violin.png", class: "header_violin" %>
-    </div>
+    </header>
 
-    <div class="top_space"></div>
+    <!-- end header content -->
 
-    <%= yield %>
-    
-    <div class="down_space"></div>
+    <!-- main content -->
+
+    <div class="row">
+      <div class="large-12 menu">
+          <div class="row">
+            <div class="large-4 columns small-6">
+              <nav>
+                <ul>
+                  <%= link_to 'Welcome', home_path, class: "button round" %>
+                  <%= link_to 'Bio', bios_path, class: "button round" %>
+                  <%= link_to 'Performances', performances_path, class: "button round" %>
+                </ul>
+              </nav>
+            </div>
+            <div class="large-4 columns large-offset-3 small-6 ">
+              <nav>
+                <ul>
+                  <a class="button round">Media</a>
+                  <%= link_to 'News', '/', class: "button round" %>
+                  <%= link_to "Contact", contact_path, class: "button round" %>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <%= image_tag 'header_violin.png', class: 'header_violin' %>
+      </div>
+      <div class="large-12" role="content" ><br/>
+        <%= yield %>
+      </div>
+    </div><br/>
+
+    <!-- end main content -->
+
+    <!-- footer -->
 
     <footer>
-      
+      <div class="row"></div>
     </footer>
-    <%= javascript_include_tag "application" %>
 
+    <!-- end footer -->
+    
+    <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -23,34 +23,25 @@ $(function(){ $(document).foundation(); });
 // intro header animation
 
 $(document).ready(function(){
-	var first_logo = $('.start_logo1'),
-		second_logo = $('.start_logo2');
+	var first_logo = $('.start_logo'),
+		second_logo = $('.start_name');
 	window.setTimeout(function(){
 		first_logo.addClass('header_logo1');
 		second_logo.addClass('header_logo2');
 	},500);
+
 });
 
-// function bgChange(){
-
-// 	$('.header_bg1').each(function(index){
-// 		$(this).hide();
-// 		$(this).delay(9000 * index).fadeIn(12000).fadeOut(10000);
-// 	});
-// 	setTimeout(bgChange, 55000);
-// }
-
-// bgChange();
 
 $(function(){
-	var current = 0
+	var current = 0;
 
 	$imgs = $('.header_bg1');
 	imgAmount = $imgs.length;
 
 	$($imgs.hide().get(Math.floor(Math.random() * $('.header_bg1:hidden').length))).show();
 
-	window.setInterval(swapImages, 6500);
+
 
 	function swapImages() {
 		var $currentImg = $('.header_bg1:visible');
@@ -60,5 +51,7 @@ $(function(){
 		$currentImg.fadeOut(speed);
 		$nextImg.fadeIn(speed);
 	}
+
+		window.setInterval(swapImages, 7500);
 
 });

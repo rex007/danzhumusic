@@ -51,7 +51,7 @@ $em-base: 16 !default;
 
 $default-float: left;
 
-$body-bg: url(bg.png);
+// $body-bg: url(bg.png);
 // $body-font-color: #222;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
@@ -67,7 +67,7 @@ $body-bg: url(bg.png);
 
 // Colors
 
-// $primary-color: #2ba6cb;
+$primary-color: #ca2400;
 // $secondary-color: #e9e9e9;
 // $alert-color: #c60f13;
 // $success-color: #5da423;
@@ -137,7 +137,7 @@ $body-bg: url(bg.png);
 // Grid Variables
 //
 
-// $row-width: emCalc(1000);
+$row-width: emCalc(1400);
 // $column-gutter: emCalc(30);
 // $total-columns: 12;
 

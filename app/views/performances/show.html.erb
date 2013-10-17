@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @performance.date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @performance.location %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @performance.description %>
+</p>
+
+<%= link_to 'Edit', edit_performance_path(@performance) %> |
+<%= link_to 'Back', performances_path %>
