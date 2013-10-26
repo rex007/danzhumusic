@@ -1,0 +1,30 @@
+<article>
+  <% @blogs.each do |blog| %>
+      <div class="large-8 push-1 radius">
+        <div class="row">
+          <div class="large-12 padding_for_fitting panel">
+            <div class="large-6 small-4">  
+              <h4><%= blog.title %></h4><hr>
+            </div>
+            <div class="large-12 small-8">
+              <div class="row">
+                <div class="large-5 columns">
+                  <%= sanitize(blog.image_url) %>
+                </div>
+                <div class="large-7 columns">
+                  <% if blog.description.length >= 200 %>
+                    <p><%= truncate(blog.description, length: 200) + " Read More"%></p> 
+                  <% else %>
+                    <p><%= blog.description %></p> 
+                  <% end %>
+                </div>
+              </div>
+              <div class="large-5 push-7">
+                <h6>Written on <%= blog.updated_at.strftime('%b %d, %Y') %></h6>
+              </div>
+            </div>
+          </div>
+        </div>      
+      </div>
+  <% end %>
+</article>

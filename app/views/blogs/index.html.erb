@@ -1,0 +1,23 @@
+
+
+<%= link_to 'New Blog', new_blog_path %>
+
+<article>
+  <% @blogs.each do |blog| %>
+      <div class="large-8 panel push-1 radius">
+        <div class="row">
+          <div class="large-6 columns">  
+            <%= sanitize(blog.image_url) %>
+          </div>
+          <div class="large-6 columns">
+            <h3><%= blog.title %></h3>
+            <h6>Written on <%= blog.updated_at.strftime('%b %d, %Y') %></h6>
+            <p><%= truncate(blog.description, length: 400) %></p>  
+          </div>
+        </div>      
+      </div>
+  <% end %>
+</article>
+ 
+<hr />
+

@@ -13,7 +13,7 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "DanZhu Music" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -21,7 +21,10 @@
   </head>
 
   <body class="<%= controller.controller_name %>">
-
+    <!-- admin CP -->
+    <% if current_admin %>
+      <%=  render 'welcome/admin' %>
+    <% end %>
     <!-- header content -->
 
     <header>
@@ -64,7 +67,7 @@
               <nav>
                 <ul>
                   <a class="button round">Media</a>
-                  <%= link_to 'News', '/', class: "button round" %>
+                  <%= link_to 'News', blogs_path, class: "button round" %>
                   <%= link_to "Contact", contact_path, class: "button round" %>
                 </ul>
               </nav>
@@ -72,7 +75,7 @@
           </div>
           <%= image_tag 'header_violin.png', class: 'header_violin' %>
       </div>
-      <div class="large-12" role="content" ><br/>
+      <div class="large-12 columns"><br/>
         <%= yield %>
       </div>
     </div><br/>

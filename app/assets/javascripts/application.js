@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require transition
 //= require turbolinks
 //= require ckeditor/init
 //= require_tree .
@@ -29,6 +30,29 @@ $(document).ready(function(){
 		first_logo.addClass('header_logo1');
 		second_logo.addClass('header_logo2');
 	},500);
+
+		// admin panel animation-- news
+
+	$('.news_admin_button').on('click', function(e){
+		var adminPanel = $('.admin_panel'),
+			up_arrow = $('.up_arrow');
+		e.preventDefault()
+		up_arrow.animate({'top':'0px'})
+		adminPanel.animate({height: ["toggle","swing"]});
+		if(adminPanel.is(':visible')){
+			up_arrow.animate({'top':'-=11px'})
+		}
+		$('#icon_new').on('click',function(){
+			var img = $('#icon_new img'),
+				img_other = $('#icon_edit, #icon_destroy');
+			img_other.fadeOut(150);
+			img.addClass('rotate').animate({
+				'width': '60%',
+				'height': '60%'
+			},100).transition({rotate: '2080deg'},150).fadeOut(100);
+		});
+	});
+
 
 });
 
@@ -55,3 +79,5 @@ $(function(){
 		window.setInterval(swapImages, 7500);
 
 });
+
+

@@ -28,7 +28,7 @@ class BiosController < ApplicationController
 
     respond_to do |format|
       if @bio.save
-        format.html { redirect_to @bio, notice: 'Bio was successfully created.' }
+        format.html { redirect_to @bio }
         format.json { render action: 'show', status: :created, location: @bio }
       else
         format.html { render action: 'new' }

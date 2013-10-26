@@ -2,8 +2,119 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .body_frame{
 	width: 100%;
 	height: 100%;
+	position: absolute;
+}
+p, h6, h4,h1{
+	color:white;
+}
+.padding_for_fitting{
+	img{
+		padding-top:10%;
+	}
+}
+.main_article_bg{
+	background: url(body_frame.png)no-repeat;
 }
 
+
+
+  // Administration
+
+.admin_panel{
+	position: absolute;
+	display: none;
+	background-color: rgba(0,0,0,.8);
+	width: 450px;
+	height: 250px;
+	z-index:9;
+	left: -32px;
+	top: -23px;
+	border: 1px solid rgba(248,248,248,.1);
+
+	img.up_arrow{
+		position: absolute;
+		right:10px;
+	}
+}
+
+
+			// for admin panel
+#icon_new{
+	width: 40%;
+	height: 50%;
+	padding: 1% 5% 0 10%;
+	margin:0 auto;
+	img:first-child{
+		position:absolute;
+		z-index:3;
+		width: 100px;
+		height: 100px;
+		cursor: pointer;
+	}
+	img:last-child{
+		position:absolute;
+		z-index:2;
+		display: none;
+		width: 100px;
+		height: 100px;
+	}
+}
+#icon_edit{
+	width: 40%;
+	height: 50%;
+	float:left;
+	padding: 0 5% 2% 10%;
+	img:first-child{
+		position: absolute;
+		z-index: 3;
+		width: 100px;
+		height: 100px;
+		cursor: pointer;
+	}
+	img:last-child{
+		position: absolute;
+		z-index: 2;
+		display: none;
+		width: 100px;
+		height: 100px;
+	}
+}
+#icon_destroy{
+	width: 40%;
+	height: 50%;
+	float:right;
+	padding: 0 5% 2% 10%;
+	img:first-child{
+		position: absolute;
+		z-index: 3;
+		width: 100px;
+		height: 100px;
+		cursor: pointer;
+	}
+	img:last-child{
+		position: absolute;
+		z-index: 2;
+		display: none;
+		width: 100px;
+		height: 100px;
+	}
+}
+
+// animation for admin panel
+
+.rotate{
+	transition: all .8s ease-out linear;
+	top: 30px;
+	left: 140px;
+}
+
+// end
+
+
+.new_news_content{
+
+}

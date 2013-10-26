@@ -85,7 +85,7 @@ $primary-color: #ca2400;
 
 // Control whether or not CSS classes come through in the CSS files.
 
-// $include-html-classes: true;
+$include-html-classes: true;
 // $include-print-styles: true;
 // $include-html-global-classes: $include-html-classes;
 // $include-html-inline-list-classes: $include-html-classes;
@@ -878,7 +878,7 @@ $row-width: emCalc(1400);
 
 // We use these to control the background and border styles
 
-// $panel-bg: darken(#fff, 5%);
+$panel-bg: darken(#db0200, 5%);
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 
@@ -1158,34 +1158,34 @@ $row-width: emCalc(1400);
 
 // These control the background color for the table and even rows
 
-// $table-bg: #fff;
-// $table-even-row-bg: #f9f9f9;
+$table-bg: #fff;
+$table-even-row-bg: rgba(246,12,12,0.1);
 
 // These control the table cell border style
 
-// $table-border-style: solid;
-// $table-border-size: 1px;
-// $table-border-color: #ddd;
+$table-border-style: solid;
+$table-border-size: 1px;
+$table-border-color: #ddd;
 
 // These control the table head styles
 
-// $table-head-bg: #f5f5f5;
-// $table-head-font-size: emCalc(14);
-// $table-head-font-color: #222;
-// $table-head-font-weight: bold;
-// $table-head-padding: emCalc(8, 10, 10);
+$table-head-bg: rgba(179,5,5,0.3);
+$table-head-font-size: emCalc(14);
+$table-head-font-color: #222;
+$table-head-font-weight: bold;
+$table-head-padding: emCalc(8, 10, 10);
 
 // These control the row padding and font styles
 
-// $table-row-padding: emCalc(9, 10);
-// $table-row-font-size: emCalc(14);
-// $table-row-font-color: #222;
-// $table-line-height: emCalc(18);
+$table-row-padding: emCalc(9, 10);
+$table-row-font-size: emCalc(14);
+$table-row-font-color: #222;
+$table-line-height: emCalc(18);
 
 // These are for controlling the display and margin of tables
 
-// $table-display: table-cell;
-// $table-margin-bottom: emCalc(20);
+$table-display: table-cell;
+$table-margin-bottom: emCalc(20);
 
 //
 // Image Thumbnail Variables
@@ -1234,7 +1234,7 @@ $row-width: emCalc(1400);
 
 // Background color for the top bar
 
-// $topbar-bg: #111;
+$topbar-bg: #d91501;
 
 // Height and margin
 

@@ -1,9 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @bio.content %>
-</p>
-
-<%= link_to 'Edit', edit_bio_path(@bio) %> |
-<%= link_to 'Back', bios_path %>
+<div class="row">
+	<div class="large-12">	
+		<%= @bio.content.html_safe %>
+	</div>
+	<%= link_to 'Edit', edit_bio_path(@bio) %> |
+	<%= link_to 'Back', bios_path %>
+</div>
