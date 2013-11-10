@@ -26,4 +26,7 @@ iconHover = ->
 	destroy_normal.on('mouseleave', ->
 		destroy_hover.fadeOut(900))
 
+newsPanel = ->
+	alert "dela"
+
 iconHover()

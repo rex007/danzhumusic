@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ckeditor/init
 //= require foundation
 //= require transition
 //= require turbolinks
-//= require ckeditor/init
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
@@ -31,25 +31,53 @@ $(document).ready(function(){
 		second_logo.addClass('header_logo2');
 	},500);
 
+	// administration effekt 
+
+	var admin_jumper = $('.admin_jumper_sign_in, .admin_jumper'),
+		adminPanel = $('.admin_panel'),
+		admin= $('.administration');
+	admin_jumper.on('click', function(){
+		var $this = $(this);
+		if (admin.hasClass('isDown')){
+			admin.animate({'top':'0px'},300)
+			admin.removeClass('isDown');
+		}else{
+			admin.animate({'top':'-45px'},350)
+			admin.addClass('isDown')
+		}
+		adminPanel.hide();
+	});
 		// admin panel animation-- news
 
 	$('.news_admin_button').on('click', function(e){
-		var adminPanel = $('.admin_panel'),
-			up_arrow = $('.up_arrow');
+		var	up_arrow = $('.up_arrow'),
+	   		img_first = $('#icon_new img:first-child'),
+			img_second = $('#icon_new img:last-child'),
+			img_other = $('#icon_edit, #icon_destroy'),
+			news_form = $('#news_form'),
+			img_new = img_first, img_second;
 		e.preventDefault()
 		up_arrow.animate({'top':'0px'})
 		adminPanel.animate({height: ["toggle","swing"]});
 		if(adminPanel.is(':visible')){
 			up_arrow.animate({'top':'-=11px'})
 		}
+		if(img_new.is(':hidden')){
+				news_form.hide('fast');
+				img_new.removeClass('rotate').transition({rotate: '0deg'}).show();
+				console.log('is hidden');
+		}
 		$('#icon_new').on('click',function(){
-			var img = $('#icon_new img'),
-				img_other = $('#icon_edit, #icon_destroy');
 			img_other.fadeOut(150);
-			img.addClass('rotate').animate({
+			img_first.addClass('rotate').animate({
 				'width': '60%',
 				'height': '60%'
 			},100).transition({rotate: '2080deg'},150).fadeOut(100);
+			img_second.animate({
+				'width': '65%',
+				'height': '65%'
+			},100).transition({rotate: '-5080deg'},200).fadeOut(200)
+			news_form.show('slow');
 		});
 	});
 

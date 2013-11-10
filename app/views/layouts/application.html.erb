@@ -22,23 +22,26 @@
 
   <body class="<%= controller.controller_name %>">
     <!-- admin CP -->
-    <% if current_admin %>
-      <%=  render 'welcome/admin' %>
-    <% end %>
+      <%=  render 'layouts/admin' %>
     <!-- header content -->
 
     <header>
       <div class="row">
-        <div class="large-8 small-8 columns">
+        <div class="large-8 small-12 columns">
           <div class="relative">
             <%= image_tag 'header_bg1.png', class: 'header_bg1' %>
             <%= image_tag 'header_bg2.png', class: 'header_bg1' %>
             <%= image_tag 'header_bg3.png', class: 'header_bg1' %>
             <%= image_tag 'header_bg4.png', class: 'header_bg1' %>   
             <%= image_tag 'header_bg5.png', class: 'header_bg1' %>
+            <%= image_tag 'header_bg6.png', class: 'header_bg1' %>
+            <%= image_tag 'header_bg7.png', class: 'header_bg1' %>
+            <%= image_tag 'header_bg8.png', class: 'header_bg1' %>
+            <%= image_tag 'header_bg9.png', class: 'header_bg1' %>
+            <%= image_tag 'header_bg10.png', class: 'header_bg1' %>
           </div>      
         </div>
-        <div class="large-4 small-4 columns">
+        <div class="large-4 small-4 columns ">
           <div class="relative">
             <%= image_tag 'header_logo.png', class: 'start_logo' %>
             <%= image_tag 'header_name.png', class: 'start_name' %>
@@ -55,7 +58,7 @@
       <div class="large-12 menu">
           <div class="row">
             <div class="large-4 columns small-6">
-              <nav>
+              <nav class="nav_left">
                 <ul>
                   <%= link_to 'Welcome', home_path, class: "button round" %>
                   <%= link_to 'Bio', bios_path, class: "button round" %>
@@ -64,7 +67,7 @@
               </nav>
             </div>
             <div class="large-4 columns large-offset-3 small-6 ">
-              <nav>
+              <nav class="nav_right">
                 <ul>
                   <a class="button round">Media</a>
                   <%= link_to 'News', blogs_path, class: "button round" %>
@@ -81,7 +84,6 @@
     </div><br/>
 
     <!-- end main content -->
-
     <!-- footer -->
 
     <footer>

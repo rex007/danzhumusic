@@ -1,13 +1,13 @@
 Danzhumusic::Application.routes.draw do
 
-  devise_for :admins  
+  devise_for :admins 
   resources :performances  
   resources :blogs
   resources :bios    
   resources :contact, only: [:new,:create]
 
 
-  get 'singout', to: 'admins/session#destroy', as: 'singout'
+  get 'sign_out', to: 'devise/session#destroy', as: 'singout'
   get 'contact', to: 'contact#new', via: :get
   get 'contact', to: 'contact#create', via: :post
 

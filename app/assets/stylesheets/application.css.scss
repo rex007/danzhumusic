@@ -91,11 +91,13 @@ header{
 	nav{
 		position:absolute;
 		z-index: 2;
-		margin-left: 25px;
 	}
-	nav:first-child{
-		padding-left: 24px;
+	.nav_left{
+		left:12%;
 
+	}
+	.nav_right{
+		right: 20%;
 	}
 
 	.header_violin{
@@ -108,8 +110,9 @@ header{
 
 footer{
 	width: 100%;
-	height: 100px;
+	height: 50px;
 	background: black;
+	margin-top: 5%;
 }
 
 // middle space header and footer
@@ -121,4 +124,141 @@ footer{
 .down_space{
 	width: 100%;
 	height: 50px;
+}
+
+ // Administration
+
+.administration{
+ 	position: absolute;
+	height:45px;
+	z-index:4;
+	top:-45px;
+	.admin_jumper{
+		width: 60px;
+		height: 20px;
+		background-color: rgba(216,0,9,1);
+		top:40px;
+		right:6px;
+		position: absolute;
+		border-radius: 0 0 100% 100%;
+		cursor: pointer;
+	}
+	.admin_jumper_sign_in{
+		width: 85px;
+		height: 20px;
+		background-color: rgba(216,0,9,1);
+		top:40px;
+		right:6px;
+		position: absolute;
+		border-radius: 0 0 100% 100%;
+		cursor: pointer;
+	}
+}
+
+ .isDown{
+ 	.admin_jumper{
+ 		background-color: black;
+ 		&:hover{
+ 			background-color: rgba(216,0,9,1);
+ 		}
+ 	}
+ }
+
+.admin_panel{
+	position: absolute;
+	display: none;
+	background-color: rgba(0,0,0,.8);
+	width: 450px;
+	height: 250px;
+	z-index:5;
+	left: -32px;
+	top: 45px;
+	border: 1px solid rgba(248,248,248,.1);
+
+	img.up_arrow{
+		position: absolute;
+		right:10px;
+		z-index:9;
+	}
+}
+
+
+#icon_new{
+	width: 40%;
+	height: 50%;
+	padding: 1% 5% 0 10%;
+	margin:0 auto;
+	img:first-child{
+		position:absolute;
+		z-index:3;
+		width: 100px;
+		height: 100px;
+		cursor: pointer;
+	}
+	img:last-child{
+		position:absolute;
+		z-index:2;
+		display: none;
+		width: 100px;
+		height: 100px;
+	}
+}
+#icon_edit{
+	width: 40%;
+	height: 50%;
+	float:left;
+	padding: 0 5% 2% 10%;
+	img:first-child{
+		position: absolute;
+		z-index: 3;
+		width: 100px;
+		height: 100px;
+		cursor: pointer;
+	}
+	img:last-child{
+		position: absolute;
+		z-index: 2;
+		display: none;
+		width: 100px;
+		height: 100px;
+	}
+}
+#icon_destroy{
+	width: 40%;
+	height: 50%;
+	float:right;
+	padding: 0 5% 2% 10%;
+	img:first-child{
+		position: absolute;
+		z-index: 3;
+		width: 100px;
+		height: 100px;
+		cursor: pointer;
+	}
+	img:last-child{
+		position: absolute;
+		z-index: 2;
+		display: none;
+		width: 100px;
+		height: 100px;
+	}
+}
+
+// animation for admin panel
+
+.rotate{
+	transition: all .8s ease-out linear;
+	top: 30px;
+	left: 140px;
+}
+
+// end
+
+#news_form{
+	width: 90%;
+	height: 100px;
+	position: absolute;
+	right: 5%;
+	margin-top: -90px;
+	display:none;
 }
