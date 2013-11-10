@@ -56,28 +56,31 @@
 
     <div class="row">
       <div class="large-12 menu">
-          <div class="row">
-            <div class="large-4 columns small-6">
-              <nav class="nav_left">
-                <ul>
+        <nav class="top-bar">
+          <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <h1><a href="#">DanZhu Music</a></h1>
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+          <section class="top-bar-">
+                <ul class="left">
                   <%= link_to 'Welcome', home_path, class: "button round" %>
                   <%= link_to 'Bio', bios_path, class: "button round" %>
                   <%= link_to 'Performances', performances_path, class: "button round" %>
                 </ul>
-              </nav>
-            </div>
-            <div class="large-4 columns large-offset-3 small-6 ">
-              <nav class="nav_right">
-                <ul>
+                <ul class='right'>
                   <a class="button round">Media</a>
                   <%= link_to 'News', blogs_path, class: "button round" %>
                   <%= link_to "Contact", contact_path, class: "button round" %>
                 </ul>
-              </nav>
-            </div>
-          </div>
-          <%= image_tag 'header_violin.png', class: 'header_violin' %>
+          </section>
+        </nav>
+            <%= image_tag 'header_violin.png', class: 'header_violin' %>
       </div>
+
       <div class="large-12 columns"><br/>
         <%= yield %>
       </div>
