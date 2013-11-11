@@ -21,7 +21,7 @@ namespace :deploy do
 
   %w[start stop restart].each do |command|
     desc "#{command} unicorn server"
-    tack command, roles: :app, except: {no_release: true} do
+    task command, roles: :app, except: {no_release: true} do
       run "/etc/init.d/unicorn_#{application} #{command}"
     end
   end
