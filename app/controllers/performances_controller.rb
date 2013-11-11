@@ -5,6 +5,8 @@ class PerformancesController < ApplicationController
   # GET /performances.json
   def index
     @performances = Performance.all
+    @current_year = Performance.current_year
+    @next_year = Performance.next_year
   end
 
   # GET /performances/1

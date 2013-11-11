@@ -3,36 +3,27 @@
     <!-- Contact Details -->
     <div class="large-7 columns  push-2">
       <%= image_tag 'body_frame.png', class:'contact_bg' %>
-      <h3 style="color:#ff0a26">Get in Touch!</h3>
-      <p style="color:white">We'd love to hear from you. You can either reach out to us as a whole and one of our awesome team members will get back to you, or if you have a specific question reach out to one of our staff. We love getting email all day <em>all day</em>.</p>
- 
-      <div class="section-container tabs" data-section>
-        <section class="">
-          <h5 class=""><a href="#panel1">Contact Me</a></h5>
-          <div class="" data-slug="">
-            <%= form_for @message, :url => contact_path do |f| %>
-              <div class="row collapse">
-                <div class="large-2 columns">
-                  <label class="inline">Your Name</label>
-                </div>
-                <div class="large-10 columns">
-                  <%= f.text_area :name %>
-                </div>
-              </div>
-              <div class="row collapse">
-                <div class="large-2 columns">
-                  <label class="inline"> Your Email</label>
-                </div>
-                <div class="large-10 columns">
-                  <%= f.text_area :email %>
-                </div>
-              </div>
-              <label>Subject</label>
-              <textarea rows="4"></textarea>
-              <%= f.submit 'Submit', class:"radius button" %>
-            <% end %>
-          </div>
-        </section>
+      <div class="large-6 push-1">
+        <h4 style="color:#ff2222;margin-top:6%">Be Expressive !</h4>
+
+      <legend style="color:white">Share your thoughts and Stay in touch.</legend>
+            <hr></div>
+  <form action="">
+      <div class="row">
+        <div class="large-5 columns push-1">
+          <label for="">Name</label>
+          <input type="text">
+        </div>
+        <div class="large-5 columns pull-1">
+          <label for="">Email</label>
+          <input type="text">
+        </div>
       </div>
+      <div class="large-10 push-1">
+          <label for="">Subject</label>
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+      </div>
+  </form>
     </div>
   </div>
+

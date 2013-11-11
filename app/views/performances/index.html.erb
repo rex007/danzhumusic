@@ -8,7 +8,7 @@
   </thead>
 
   <tbody>
-    <% @performances.each do |performance| %>
+    <% @current_year.each do |performance| %>
       <tr>
         <td><%= performance.date.strftime('%b %d , %Y') %></td>
         <td><%= performance.location %></td>
