@@ -1,19 +1,22 @@
-<table class="push-1 blog_article_bg">
-  <thead>
-    <tr>
-      <th width="100" class='center'>Date</th>
-      <th width="150" class='center'>Location</th>
-      <th widht="250" class='center'>Description</th>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="large-12 columns">
+    <table class="blog_article_bg">
+        <tr>
+          <th width="100" >Date</th>
+          <th width="150" >Location</th>
+          <th>Description</th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @current_year.each do |performance| %>
-      <tr>
-        <td><%= performance.date.strftime('%b %d , %Y') %></td>
-        <td><%= performance.location %></td>
-        <td><%= truncate(performance.description, length: 100) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @current_year.each do |performance| %>
+          <tr>
+            <td><%= performance.date.strftime('%b %d , %Y') %></td>
+            <td><%= performance.location %></td>
+            <td><%= truncate(performance.description, length: 100) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

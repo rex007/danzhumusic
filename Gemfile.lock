@@ -33,6 +33,8 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (>= 0.0.23)
+    capistrano-rails (1.0.0)
+      capistrano
     ckeditor (4.0.6)
       mime-types
       orm_adapter
@@ -154,6 +156,7 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano
+  capistrano-rails
   ckeditor
   coffee-rails (~> 4.0.0)
   devise

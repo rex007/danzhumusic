@@ -1,11 +1,11 @@
 set :application, 'danzhumusic'
-set :repo_url, 'git@github.com:rex007/#{application}.git'
-set :branch, "master"
+set :repo_url, 'git@github.com:rex007/danzhumusic.git'
+ask :branch, 'master'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-set :deploy_to, '/home/#{user}/www/#{application}'
-set :scm, :git
+# set :deploy_to, '/var/www/my_app'
+# set :scm, :git
 
 # set :format, :pretty
 # set :log_level, :debug
@@ -17,37 +17,35 @@ set :scm, :git
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 # set :keep_releases, 5
 
-# namespace :deploy do
+namespace :deploy do
 
-#   %w[start stop restart].each do |command|
-#     desc "#{command} unicorn server"
-#     task command, roles: :app, except: {no_release: true} do
-#       run "/etc/init.d/unicorn_#{application} #{command}"
-#     end
-#   end
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      # Your restart mechanism here, for example:
+      # execute :touch, release_path.join('tmp/restart.txt')
+    end
+  end
+  desc "Check that we can access everything"
+  task :check_write_permissions do
+    on roles(:all) do |host|
+      if test("[ -w #{fetch(:deploy_to)} ]")
+        info "#{fetch(:deploy_to)} is writable on #{host}"
+      else
+        error "#{fetch(:deploy_to)} is not writable on #{host}"
+      end
+    end
+  end
 
-#   task :setup_config, roles: :app do
-#     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/site-enabled"
-#     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_"
-#     run "mkdir -p #{shared_path}/config"
-#     put File.read("config/database.yml"), "#{shared_path}/config/database.yml"
-#     puts 'Now edit the config files in #{shared_path}'
-#   end
-#   after "deploy:setup", "deploy:setup_config"
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
+    end
+  end
 
-#   task :symlink_config, roles: :app do
-#     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-#   end
-#   after "deploy:finalize_update", "deploy:symlink_config"
+  after :finishing, 'deploy:cleanup'
 
-#   desc "Make sure local git is in sync with remote"
-#   task :ckeck_revision, roles: :web do
-#     unless `git rev-parse HEAD` == `git rev-parse origin/master`
-#       puts "WARNING: HEAD is not the same as origin/master"
-#       puts "Run `git push` to sync changes"
-#       exit
-#     end
-#   end
-#   before "deploy", "deploy:check_revision"
-# end
-
+end

@@ -23,8 +23,32 @@
   <body class="<%= controller.controller_name %>">
     <!-- admin CP -->
       <%=  render 'layouts/admin' %>
+    <!-- end admin CP -->
+    <!-- mobile nav menu -->
+    <div class="content_to_grid" style="display:none">
+      <nav class="top-bar">
+        <ul class="title-area">
+      <!-- Title Area -->
+          <li class="name">
+            <h1><a href="#">DanZhu Music</a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+                <ul class="left">
+                  <li><%= link_to 'Welcome', home_path, class: "button round" %></li>
+                  <li><%= link_to 'Bio', bios_path, class: "button round" %></li>
+                  <li><%= link_to 'Performances', performances_path, class: "button round" %></li>
+                  <li><a class="button round">Media</a></li>
+                  <li><%= link_to 'News', blogs_path, class: "button round" %></li>
+                  <li><%= link_to "Contact", contact_path, class: "button round" %></li>
+                </ul>
+        </section>
+      </nav>
+    </div>
+    <!-- end mobile nav menu -->
     <!-- header content -->
-
+  
     <header>
       <div class="row">
         <div class="large-8 small-12 columns">
@@ -54,28 +78,20 @@
     <!-- main content -->
 
     <div class="row">
-      <div class="large-12 menu">
-        <nav class="top-bar">
-          <ul class="title-area">
-    <!-- Title Area -->
-    <li class="name">
-      <h1><a href="#">DanZhu Music</a></h1>
-    </li>
-    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-          <section class="top-bar-">
+      <div class="large-12 menu columns">
+        <nav class="nav_left">
                 <ul class="left">
                   <%= link_to 'Welcome', home_path, class: "button round" %>
                   <%= link_to 'Bio', bios_path, class: "button round" %>
                   <%= link_to 'Performances', performances_path, class: "button round" %>
                 </ul>
+        </nav>
+        <nav class="nav_right">
                 <ul class='right'>
                   <a class="button round">Media</a>
                   <%= link_to 'News', blogs_path, class: "button round" %>
                   <%= link_to "Contact", contact_path, class: "button round" %>
                 </ul>
-          </section>
         </nav>
             <%= image_tag 'header_violin.png', class: 'header_violin' %>
       </div>
