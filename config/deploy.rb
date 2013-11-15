@@ -1,4 +1,4 @@
-set :application, 'danzhumusic'
+set :application, 'dev1'
 set :repo_url, 'git@github.com:rex007/danzhumusic.git'
 
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
