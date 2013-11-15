@@ -3,8 +3,8 @@ set :repo_url, 'git@github.com:rex007/danzhumusic.git'
 
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-# set :deploy_to, '/var/www/my_app'
-# set :scm, :git
+set :deploy_to, '/var/www/my_app'
+set :scm, :git
 
 # set :format, :pretty
 # set :log_level, :debug
