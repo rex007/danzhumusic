@@ -1,8 +1,7 @@
 set :application, 'danzhumusic'
 set :repo_url, 'git@github.com:rex007/danzhumusic.git'
-ask :branch, 'master'
 
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # set :deploy_to, '/var/www/my_app'
 # set :scm, :git
@@ -16,7 +15,6 @@ ask :branch, 'master'
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 # set :keep_releases, 5
-
 
 namespace :deploy do
 
