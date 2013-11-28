@@ -8,14 +8,11 @@
 	height: 100%;
 	position: absolute;
 }
-p, h6, h4,h1{
+.text_white th,.text_white td,p, h6, h4,h1{
 	color:white;
 }
 
-.main_article_bg{
-	background: url(body_frame.png) no-repeat;
-	min-height: 700px;
-}
+
 .main_title_blog{
 	margin-top: 40px;
 }
@@ -28,5 +25,19 @@ p, h6, h4,h1{
 	left:0;
 	top:0;
 }
- 
+.social_float{
+	h4{
+		float:left;
+		margin-top: 5px;	
+	}
+	a:first-of-type{
+	margin-left:20px;
+	}
+}
+.mobile_padding table{
+	background: url(body_frame.png) 100%;
+	border: none;
+}
+
+
 

@@ -1,8 +1,7 @@
 Danzhumusic::Application.routes.draw do
 
   devise_for :admins 
-  resources :performances  
-  resources :blogs
+  resources :performances
   resources :bios    
   resources :contact, only: [:new,:create]
 

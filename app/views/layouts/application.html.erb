@@ -15,7 +15,7 @@
 
   	<title><%= content_for?(:title) ? yield(:title) : "DanZhu Music" %></title>
 
-  	<%= stylesheet_link_tag    "application" %>
+  	<%= stylesheet_link_tag    "application", "mobile" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
   </head>
@@ -25,7 +25,7 @@
       <%=  render 'layouts/admin' %>
     <!-- end admin CP -->
     <!-- mobile nav menu -->
-    <div class="content_to_grid" style="display:none">
+    <div class="content_to_grid">
       <nav class="top-bar">
         <ul class="title-area">
       <!-- Title Area -->
@@ -51,7 +51,7 @@
   
     <header>
       <div class="row">
-        <div class="large-8 small-12 columns">
+        <div class="large-8 columns mobile_header">
           <div class="relative">
             <%= image_tag 'header_bg1.png', class: 'header_bg1' %>
             <%= image_tag 'header_bg2.png', class: 'header_bg1' %>
@@ -64,8 +64,8 @@
             <%= image_tag 'header_bg9.png', class: 'header_bg1' %>
           </div>      
         </div>
-        <div class="large-4 small-4 columns ">
-          <div class="relative">
+        <div class="large-4 columns logo">
+          <div class="relative logo">
             <%= image_tag 'header_logo.png', class: 'start_logo' %>
             <%= image_tag 'header_name.png', class: 'start_name' %>
           </div>
@@ -79,14 +79,14 @@
 
     <div class="row">
       <div class="large-12 menu columns">
-        <nav class="nav_left">
+        <nav class="nav_left large-menu">
                 <ul class="left">
                   <%= link_to 'Welcome', home_path, class: "button round" %>
                   <%= link_to 'Bio', bios_path, class: "button round" %>
                   <%= link_to 'Performances', performances_path, class: "button round" %>
                 </ul>
         </nav>
-        <nav class="nav_right">
+        <nav class="nav_right large-menu">
                 <ul class='right'>
                   <a class="button round">Media</a>
                   <%= link_to 'News', blogs_path, class: "button round" %>

@@ -9,9 +9,9 @@
       <ul class="right">
         <% if current_admin %>
           <li class="divider"></li>
-          <li><%= link_to 'News', '/', class: "news_admin_button" %></li>
+          <li><%= link_to "News", '#', data: { reveal_id: "news_admin"} %></li>
           <li class="divider"></li>
-          <li><%= link_to 'Events', '/', class: "events_admin_button" %></li>
+          <li><%= link_to "Events",'#', data: { reveal_id: "performance_admin"} %></li>
           <li class="divider"></li>
           <li class="divider"></li>
           <li class="divider"></li>
@@ -29,11 +29,73 @@
   </nav>
 </div>
 
-<div class="row ">
-  <div class="large-4 columns push-6">
-    <div class="admin_panel">
-      <%= image_tag 'icons/up_arrow.png', class: 'up_arrow' %>
-      <%= render 'layouts/news_panel' %>
-    </div> 
-  </div>
+
+<div id="news_admin" class="reveal-modal">
+  <h2>Administration for News</h2>
+  <%= link_to "New News",'#', data: { reveal_id: "new_news"} %>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Photos</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @blogs.each do |blog| %>
+        <tr>
+          <td><%= blog.title %></td>
+          <td><%= blog.description %></td>
+          <td></td>
+          <td><%= link_to 'Show', blog %></td>
+          <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+          <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="new_news" class="reveal-modal">
+    <%= render 'blogs/form' %>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="performance_admin" class="reveal-modal">
+  <h2>Administration for Performances</h2>
+  <%= link_to "New Performance", '#', data: { reveal_id: 'new_event'} %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Location</th>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @performances.each do |performance| %>
+        <tr>
+          <td><%= performance.date %></td>
+          <td><%= performance.location %></td>
+          <td><%= truncate(performance.description, length: 100) %></td>
+          <td><%= link_to 'Show', performance %></td>
+          <td><%= link_to 'Edit', edit_performance_path(performance) %></td>
+          <td><%= link_to 'Destroy', performance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="new_event" class="reveal-modal">
+  <%= render 'performances/form' %>
+  <a class="close-reveal-modal">&#215;</a>
 </div>

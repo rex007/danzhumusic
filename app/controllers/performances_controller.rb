@@ -4,9 +4,11 @@ class PerformancesController < ApplicationController
   # GET /performances
   # GET /performances.json
   def index
-    @performances = Performance.all
+    @performances = Performance.all.order('created_at DESC')
     @current_year = Performance.current_year
-    @next_year = Performance.next_year
+    @previous_year = Performance.previous_year
+    @current_year_pick = Date.today.strftime('%Y')
+    @previous_year_pick = @current_year_pick.to_i - 1
   end
 
   # GET /performances/1
@@ -30,7 +32,7 @@ class PerformancesController < ApplicationController
 
     respond_to do |format|
       if @performance.save
-        format.html { redirect_to @performance, notice: 'Performance was successfully created.' }
+        format.html { redirect_to performances_path }
         format.json { render action: 'show', status: :created, location: @performance }
       else
         format.html { render action: 'new' }
@@ -44,7 +46,7 @@ class PerformancesController < ApplicationController
   def update
     respond_to do |format|
       if @performance.update(performance_params)
-        format.html { redirect_to @performance, notice: 'Performance was successfully updated.' }
+        format.html { redirect_to performances_path }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-fileupload/basic
 //= require ckeditor/init
 //= require foundation
 //= require transition
@@ -24,12 +25,6 @@ $(function(){ $(document).foundation(); });
 // intro header animation
 
 $(document).ready(function(){
-	var first_logo = $('.start_logo'),
-		second_logo = $('.start_name');
-	window.setTimeout(function(){
-		first_logo.addClass('header_logo1');
-		second_logo.addClass('header_logo2');
-	},500);
 
 	// administration effekt 
 
@@ -47,42 +42,32 @@ $(document).ready(function(){
 		}
 		adminPanel.hide();
 	});
-		// admin panel animation-- news
-
-	$('.news_admin_button').on('click', function(e){
-		var	up_arrow = $('.up_arrow'),
-	   		img_first = $('#icon_new img:first-child'),
-			img_second = $('#icon_new img:last-child'),
-			img_other = $('#icon_edit, #icon_destroy'),
-			news_form = $('#news_form'),
-			img_new = img_first, img_second;
-		e.preventDefault()
-		up_arrow.animate({'top':'0px'})
-		adminPanel.animate({height: ["toggle","swing"]});
-		if(adminPanel.is(':visible')){
-			up_arrow.animate({'top':'-=11px'})
-		}
-		if(img_new.is(':hidden')){
-				news_form.hide('fast');
-				img_new.removeClass('rotate').transition({rotate: '0deg'}).show();
-				console.log('is hidden');
-		}
-		$('#icon_new').on('click',function(){
-			img_other.fadeOut(150);
-			img_first.addClass('rotate').animate({
-				'width': '60%',
-				'height': '60%'
-			},100).transition({rotate: '2080deg'},150).fadeOut(100);
-			img_second.animate({
-				'width': '65%',
-				'height': '65%'
-			},100).transition({rotate: '-5080deg'},200).fadeOut(200)
-			news_form.show('slow');
-		});
-	});
-
 
 });
+$(window).resize(function(){
+	if($(window).width() > 764 ){
+		var first_logo = $('.start_logo'),
+		second_logo = $('.start_name');
+		window.setTimeout(function(){
+			first_logo.addClass('header_logo1');
+			second_logo.addClass('header_logo2');
+		},500);
+	}else{
+		false;
+	}
+})
+// 	// effect for nav
+// $(window).resize(function(){
+// 	if($(window).width() < 800 ){
+// 		$('.large-menu').hide();
+// 		$('.content_to_grid').show();
+// 	}else{
+// 		$('.large-menu').show();
+// 		$('.content_to_grid').hide();
+// 	}
+
+// });
+
 
 
 $(function(){
@@ -92,8 +77,6 @@ $(function(){
 	imgAmount = $imgs.length;
 
 	$($imgs.hide().get(Math.floor(Math.random() * $('.header_bg1:hidden').length))).show();
-
-
 
 	function swapImages() {
 		var $currentImg = $('.header_bg1:visible');

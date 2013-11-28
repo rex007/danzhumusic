@@ -3,5 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .bios_bg{
-	background: url(body_frame.png) repeat-y;
+	position:absolute;
+	z-index: -1;
+	width: 100%;
+	height: 106%;
+	margin-top:-3%;
 }

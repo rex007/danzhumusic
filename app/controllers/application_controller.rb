@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   def load
   	@blogs=Blog.all
   	@blog = Blog.new
+  	@performances = Performance.all
+  	@performance = Performance.new
   end
 
 
