@@ -1,0 +1,7 @@
+<% if @blog.new_record? %>
+	alert("Faild");
+<% else %>
+	if ($('h1') !== undefined ) {
+		$('#blogs').append("<%=j render(@blog) %>");
+	}
+<% end %>

@@ -1,4 +1,5 @@
 class PerformancesController < ApplicationController
+  before_filter :authenticate_admin!, except: [:index]
   before_action :set_performance, only: [:show, :edit, :update, :destroy]
 
   # GET /performances

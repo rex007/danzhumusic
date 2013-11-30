@@ -1,10 +1,11 @@
 class BlogsController < ApplicationController
+  before_filter :authenticate_admin!, except: [:index]
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all.order("created_at DESC")
+    @blogs = Blog.all
   end
 
   # GET /blogs/1
@@ -24,17 +25,7 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-    @blog = Blog.new(blog_params)
-
-    respond_to do |format|
-      if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @blog }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
-      end
-    end
+    @blog = Blog.create(blog_params)
   end
 
   # PATCH/PUT /blogs/1
@@ -69,6 +60,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :description, :image_url)
+      params.require(:blog).permit(:title, :description, :image)
     end
 end

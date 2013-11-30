@@ -3,9 +3,9 @@
 one:
   title: MyString
   description: MyText
-  image_url: MyText
+  image: MyString
 
 two:
   title: MyString
   description: MyText
-  image_url: MyText
+  image: MyString

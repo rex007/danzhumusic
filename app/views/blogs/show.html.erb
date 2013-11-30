@@ -10,10 +10,7 @@
   <%= @blog.description %>
 </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @blog.image_url %>
-</p>
+<%= render 'upload' %>
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
