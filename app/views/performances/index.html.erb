@@ -1,24 +1,24 @@
 <div class="large-8 push-1">
-  <div class='section-container auto' data-section >
+  <div class='section-container auto' data-section>
   <section class="active">
     <h2 class="title" data-section-title><a href="#panel1"><%= @current_year_pick %></a></h2>
       <table class="content large-12" data-section-content>
         <thead>
           <tr>
-            <th width="100" >Date</th>
-            <th width="150" >Location</th>
-            <th>Description</th>
+            <th width="100">Date</th>
+            <th width="150">Location</th>
+            <th >Description</th>
           </tr>
         </thead>
 
         <tbody>
           <% @current_year.each do |performance| %>
             <tr>
-              <td><%= performance.date.strftime('%b %d , %Y') %></td>
+              <td><%= performance.date.strftime('%b %d, %Y') %></td>
               <td><%= performance.location %></td>
-              <td><%= truncate(performance.description, length: 100) %></td>
+              <td><%= performance.description %></td>
             </tr>
-          <% end %>
+        <% end %>            
         </tbody>
       </table>
   </section>
@@ -27,8 +27,8 @@
       <table class="content large-12" data-section-content>
         <thead>
           <tr>
-            <th width="100" >Date</th>
-            <th width="150" >Location</th>
+            <th width="150">Date</th>
+            <th width="200">Location</th>
             <th>Description</th>
           </tr>
         </thead>
@@ -36,9 +36,9 @@
         <tbody>
           <% @previous_year.each do |performance| %>
             <tr>
-              <td><%= performance.date.strftime('%b %d , %Y') %></td>
+              <td><%= performance.date.strftime('%b %d, %Y') %></td>
               <td><%= performance.location %></td>
-              <td><%= truncate(performance.description, length: 100) %></td>
+              <td><%= performance.description %></td>
             </tr>
           <% end %>
         </tbody>
@@ -46,3 +46,5 @@
     </section>
   </div>
 </div>
+
+

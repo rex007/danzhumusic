@@ -1,27 +1,27 @@
 <article class="small-12">
   <%= image_tag 'body_frame.png', class:"welcome_events" %>
   <% @blogs.each do |blog| %>
-      <div class="large-8 push-1 radius">
+      <div class="large-8 small-8 push-1 radius">
         <div class="row">
           <div class="large-12 mobile_news">
             <div class="large-6 small-4">  
               <h4 class="main_title_blog"><%= blog.title %></h4><hr>
             </div>
-            <div class="large-12 small-8">
+            <div class="large-12 small-12">
               <div class="row">
-                <div class="large-6 columns">
-                  <%= image_tag blog.image.url(:thumb).to_s %>
+                <div class="large-6 small-4 columns">
+                  <%= image_tag blog.image.url(:welcome_blog).to_s %>
                 </div>
-                <div class="large-6 columns">
+                <div class="large-6 small-8 columns">
                   <% if blog.description.length >= 200 %>
                     <p><%= truncate(blog.description, length: 200) %></p> 
-                    <%= link_to '...Read more', '#', data: { reveal_id: 'testic'} %>
+                    <%= link_to '...Read more', blog %>
                   <% else %>
                     <p><%= blog.description %></p> 
                   <% end %>
                 </div>
               </div>
-              <div class="large-5 push-7">
+              <div class="large-5 small-12 push-7">
                 <h6 style="">Written on <%= blog.updated_at.strftime('%b %d, %Y') %></h6>
               </div>
             </div>
@@ -34,7 +34,3 @@
   </div>
 </article>
 
-<div id="testic" class="reveal-modal">
-    <%= @blog.title %>
-    <%= @blog.description %>
-  </div>

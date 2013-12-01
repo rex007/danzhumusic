@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_filter :authenticate_admin!, except: [:index]
+  before_filter :authenticate_admin!, except: [:index, :show]
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   # GET /blogs

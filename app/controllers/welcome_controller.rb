@@ -4,4 +4,8 @@ class WelcomeController < ApplicationController
   	@performances = Performance.all.limit(3)
   end
 
+  def readmore
+  	@blog = Blog.find(params[:id])
+  end
+
 end

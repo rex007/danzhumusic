@@ -8,22 +8,22 @@
 
       <legend style="color:white">Share your thoughts and Stay in touch.</legend>
             <hr></div>
-  <form action="">
+    <%= form_for(@contact) do |f| %>
       <div class="row">
         <div class="large-5 columns push-1">
           <label for="">Name</label>
-          <input type="text">
+          <%= f.text_field :name %>
         </div>
         <div class="large-5 columns pull-1">
           <label for="">Email</label>
-          <input type="text">
+          <%= f.text_field :email %>
         </div>
       </div>
       <div class="large-10 push-1">
           <label for="">Subject</label>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <%= f.text_field :subject, cols: "30", rows: "10" %>
       </div>
-  </form>
+    <% end %>
     </div>
-  </div>
+</div>
 

@@ -44,6 +44,8 @@ $(document).ready(function(){
 		adminPanel.hide();
 	});
 
+	setInterval(footerLooper,2500)
+
 });
 $(window).resize(function(){
 	if($(window).width() > 764 ){
@@ -57,6 +59,15 @@ $(window).resize(function(){
 		false;
 	}
 })
+
+function footerLooper(){
+	var logo = $('.footer h6');
+	if(logo.hasClass('footer_after')){
+		logo.removeClass('footer_after');
+	}else{
+		logo.addClass('footer_after');
+	}
+};
 // 	// effect for nav
 // $(window).resize(function(){
 // 	if($(window).width() < 800 ){
