@@ -1,27 +1,18 @@
 class ContactController < ApplicationController
-	before_action :set_contact, only: [:show, :edit, :update, :destroy]
-
 
 	def new
-		@contacts = Contact.all
-		@contact = Contact.new
+		@contact=Contact.new
 	end
 
 	def create
-		@contact = Contact.new(contact_params)
-
-		NotificationsMailer.new_message(@message).deliver
-		redirect_to root_path
+		@contact=Contact.new(params[:contact])
+		@contact.request = request
+		if @contact.deliver
+			flash.now[:error]=nill
+			flash.now[:notice]= "Thank your for your message!"
+		else
+			flash.now[:error]= "Cannot send message"
+			render :new
+		end
 	end
-
-	private
-
-	def set_contact
-		@contact = Contact.find(params[:id])
-	end
-
-	def contact_params
-		params.require(:contact).permit(:name, :email, :subject) 
-	end
-	
 end

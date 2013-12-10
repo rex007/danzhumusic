@@ -14,6 +14,7 @@ gem 'devise'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'jquery-fileupload-rails'
+gem 'mail_form'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
