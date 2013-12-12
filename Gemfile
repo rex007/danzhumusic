@@ -15,6 +15,8 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'jquery-fileupload-rails'
 gem 'mail_form'
+gem 'simple_form'
+gem 'passenger'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

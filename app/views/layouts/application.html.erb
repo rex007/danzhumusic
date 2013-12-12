@@ -21,6 +21,14 @@
   </head>
 
   <body class="<%= controller.controller_name %>">
+
+    <% flash.each do |name, msg| %>
+      <% if msg.is_a?(String) %>
+        <div class="alert alert-#{name== :notice ? "success" : "error"}">
+          <%= content_tag :div, msg, id: "flash_#{name}" %>
+        </div>
+      <% end %>
+    <% end %>
     <!-- admin CP -->
       <%=  render 'layouts/admin' %>
     <!-- end admin CP -->
@@ -39,9 +47,8 @@
                   <li><%= link_to 'Welcome', home_path, class: "button round" %></li>
                   <li><%= link_to 'Bio', bios_path, class: "button round" %></li>
                   <li><%= link_to 'Performances', performances_path, class: "button round" %></li>
-                  <li><a class="button round">Media</a></li>
+                  <li><%= link_to 'Media', media_path, class: "button round" %></li>
                   <li><%= link_to 'News', blogs_path, class: "button round" %></li>
-                  <li><%= link_to "Contact", contact_path, class: "button round" %></li>
                 </ul>
         </section>
       </nav>
@@ -88,7 +95,7 @@
         </nav>
         <nav class="nav_right large-menu">
                 <ul class='right'>
-                  <a class="button round">Media</a>
+                  <%= link_to 'Media', media_path, class: "button round" %>
                   <%= link_to 'News', blogs_path, class: "button round" %>
                   <%= link_to "Contact", contact_path, class: "button round" %>
                 </ul>

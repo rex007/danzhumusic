@@ -4,12 +4,13 @@ Danzhumusic::Application.routes.draw do
   resources :blogs  
   resources :performances
   resources :bios    
-  resources :contact, only: [:new,:create]
+  resources :contacts, only: [:new,:create]
 
 
   get 'sign_out', to: 'devise/session#destroy', as: 'singout'
-  get 'contact', to: 'contact#new', via: :get
-  get 'contact', to: 'contact#create', via: :post
+  get 'contact', to: 'contacts#new', via: :get
+  get 'contact', to: 'contacts#create', via: :post
+  get "media/index", as:'media'
 
 
   mount Ckeditor::Engine => '/ckeditor'
